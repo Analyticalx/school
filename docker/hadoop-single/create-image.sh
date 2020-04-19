@@ -1,1 +1,0 @@
-docker build -t analyticalx/hadoop-single .
