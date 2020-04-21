@@ -3,5 +3,5 @@
 # start check server
 nohup python3 -u /analyticalx/web/check.py > /analyticalx/web/check.out &
 
-sh /start-hadoop.sh
+sh /opt/analyticalx/start-hadoop.sh
 #tail -f /dev/null
