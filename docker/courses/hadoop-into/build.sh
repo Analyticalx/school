@@ -1,1 +1,1 @@
-docker build -t hadoop-test .
+docker build -t hadoop-into .
