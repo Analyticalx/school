@@ -6,20 +6,33 @@ RUN \
   apt-get install -y \
   ssh \
   rsync \
-  openjdk-8-jdk 
+  openjdk-8-jdk \
+  python3 \
+  python3-pip
+
+RUN \
+  python3 -m pip install \
+  flask \
+  flask-cors
 
 # set environment vars
 ENV HADOOP_HOME /opt/hadoop
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
-# COPY hadoop-2.9.2.tar.gz hadoop-2.9.2.tar.gz
-RUN wget http://apache.mirrors.tds.net/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
+COPY hadoop-2.9.2.tar.gz hadoop-2.9.2.tar.gz
+# RUN wget http://apache.mirrors.tds.net/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
 
 # create ssh keys
 RUN \
    ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa && \
    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys && \
    chmod 0600 ~/.ssh/authorized_keys
+
+# copy analyticalx web
+COPY analyticalx/web /opt/analyticalx/web
+
+# copy analyticalx files
+COPY analyticalx/files /root/analyticalx/files
 
 # download and extract hadoop, set JAVA_HOME in hadoop-env.sh, update path
 RUN \
