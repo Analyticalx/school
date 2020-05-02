@@ -4,6 +4,7 @@ FROM ubuntu:18.04
 RUN \
   apt-get update && \
   apt-get install -y \
+  vim \
   ssh \
   rsync \
   openjdk-8-jdk \
@@ -33,6 +34,9 @@ COPY analyticalx/web /opt/analyticalx/web
 
 # copy analyticalx files
 COPY analyticalx/files /root/analyticalx/files
+
+# copy analyticalx py
+COPY analyticalx/py /root/analyticalx/py
 
 # download and extract hadoop, set JAVA_HOME in hadoop-env.sh, update path
 RUN \

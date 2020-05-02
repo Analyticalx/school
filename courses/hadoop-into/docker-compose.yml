@@ -3,8 +3,10 @@ services:
   hadoop-into:
     image: analyticalx/hadoop-into
     restart: always
-    # volumes:
-    #   - ./analyticalx:/analyticalx
+    volumes:
+      - ./analyticalx/files:/root/analyticalx/files
+      - ./analyticalx/py:/root/analyticalx/py
+      - ./analyticalx/web:/opt/analyticalx/web
     # command: bash /analyticalx/sh/start-into.sh
     ports:
     - "2222:22"

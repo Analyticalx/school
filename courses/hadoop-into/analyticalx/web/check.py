@@ -12,7 +12,8 @@ def valid():
     tests = [
         "/analyticalx",
         "/analyticalx/inbound",
-        "/analyticalx/inbound/people.csv"
+        "/analyticalx/inbound/people.csv",
+        "/analyticalx/output/wordcount/part-00000"
         ]
     validations = []
     for t in tests:
