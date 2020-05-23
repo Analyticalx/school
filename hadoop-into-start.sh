@@ -12,7 +12,7 @@ do
             sleep 60
         else
             echo "container stating"
-            sudo docker run -p 50070:50070 -p 8088:8088 -p 5000:5000 -p 2222:22 -d analyticalx/hadoop-into
+            sudo docker run --name hadoop-into -p 50070:50070 -p 8088:8088 -p 5000:5000 -p 2222:22 -d analyticalx/hadoop-into
         fi
     else
         echo "service docker starting"
