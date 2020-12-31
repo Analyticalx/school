@@ -13,8 +13,8 @@ RUN \
 ENV HADOOP_HOME /opt/hadoop
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
-COPY hadoop-2.10.1.tar.gz hadoop-2.10.1.tar.gz
-#RUN wget http://apache.mirrors.tds.net/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz
+# COPY hadoop-2.10.1.tar.gz hadoop-2.10.1.tar.gz
+RUN wget http://apache.mirrors.tds.net/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz
 
 # create ssh keys
 RUN \
