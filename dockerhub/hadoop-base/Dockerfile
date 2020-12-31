@@ -30,10 +30,7 @@ RUN \
   echo "PATH=$PATH:$HADOOP_HOME/bin" >> ~/.bashrc
 
 # copy hadoop configs
-ADD etc/hadoop/core-site.xml $HADOOP_HOME/etc/hadoop/
-ADD etc/hadoop/hdfs-site.xml $HADOOP_HOME/etc/hadoop/
-ADD etc/hadoop/mapred-site.xml $HADOOP_HOME/etc/hadoop/
-ADD etc/hadoop/yarn-site.xml $HADOOP_HOME/etc/hadoop/
+ADD etc/hadoop/*xml $HADOOP_HOME/etc/hadoop/
 
 # root connect ssh
 RUN echo 'root:analyticalx' | chpasswd
