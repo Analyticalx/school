@@ -26,7 +26,7 @@ RUN \
 RUN \
   tar -xzf hadoop-2.10.1.tar.gz && \
   mv hadoop-2.10.1 $HADOOP_HOME && \
-  rm hadoop-2.10.1.tar.gz && \
+  rm -f hadoop-2.10.1.tar.gz && \
   echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
   echo "PATH=$PATH:$HADOOP_HOME/bin" >> ~/.bashrc
 
